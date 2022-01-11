@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="tetrisbitar/I.png">
+</head>
+
+<body id="body">
+    <div id="p1"></div>
+    <img id="I" width="20" height="20" src="tetrisbitar/I.png">
+    <img id="J" width="20" height="20" src="tetrisbitar/J.png">
+    <img id="L" width="20" height="20" src="tetrisbitar/L.png">
+    <img id="T" width="20" height="20" src="tetrisbitar/T.png">
+    <img id="S" width="20" height="20" src="tetrisbitar/S.png">
+    <img id="Z" width="20" height="20" src="tetrisbitar/Z.png">
+    <img id="O" width="20" height="20" src="tetrisbitar/O.png">
+    <img id="G" width="20" height="20" src="tetrisbitar/G.png">
+
+    <canvas id="bg1" style="z-index: 1;  background-color:#686796;"></canvas>
+    <canvas id="fg1" style="z-index: 2;"></canvas>
+
+    <button onclick="resetGame()" id="startButton">Start (Q)</button><br>
+    <div id="settings" class="settings">
+        <div class="slidecontainer">
+            <label for="dasSlider">DAS:</label>
+            <input type="range" min="0" max="200" value="83" class="slider" id="dasSlider" style="height: 1ex">
+            <input type="number" id="dasAfter" value="83" size="3" min="0" max="200">ms
+        </div>
+
+        <div class="slidecontainer">
+            <label for="softDropSlider">Softdrop factor;</label>
+            <input type="range" min="0" max="200" value="0" class="slider" id="softDropSlider" style="height: 1ex">
+            <input type="number" id="softDropAfter" value="0" size="3" min="0" max="200">ms
+        </div>
+
+        <table class="controlcontainer" id="controlsinputs">
+        </table>
+
+    </div>
+    <button id="settingsButton" onclick="settingsButton()" style="display:inline">Settings</button>
+
+    <script src="game.js"></script>
+    <script src="site.js"></script>
+
+</body>
+<style>
+    .slidecontainer {
+        font-family: "Papyrus";
+        margin-top: 5%;
+    }
+
+    .statcontainer {
+        margin-left: 1vh;
+        z-index: 3;
+    }
+
+    .controlcontainer input {
+        /*outline:none;*/
+        margin-left: 3vh;
+
+    }
+
+    .controlcontainer input:focus {
+        background-color: rgb(178, 187, 173);
+
+    }
+
+    .settings {
+
+        position: absolute;
+        height: 500px;
+        width: 500px;
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb(219, 180, 180);
+        z-index: 3;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    img {
+        display: none;
+    }
+
+    canvas {
+        position: absolute;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        size: 100vh;
+        /*
+        transform: scale(1.2);*/
+        top: 5%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    body {
+        background-color: #a49db1;
+    }
+
+    p {
+        margin-left: 20vh;
+        z-index: 6;
+
+    }
+</style>
+
+</html>
